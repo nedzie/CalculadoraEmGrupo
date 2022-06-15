@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Calculadora.ConsoleApp
 {
@@ -8,8 +9,15 @@ namespace Calculadora.ConsoleApp
         {
             string opcao;
 
+            List<string> histroico = new List<string>();
+
             while (true)
             {
+               
+                string operacaoAtual = "";
+                string operacaoSinal = "";
+
+
                 #region Menu Principal
 
                 Console.Clear();
@@ -19,6 +27,8 @@ namespace Calculadora.ConsoleApp
                 Console.WriteLine("Tela Principal\n");
 
                 Console.WriteLine("Digite 2 para subtrair\n");
+
+                Console.WriteLine("Digite 5 para historico\n");
 
                 Console.WriteLine("Digite S para sair\n");
 
@@ -46,24 +56,33 @@ namespace Calculadora.ConsoleApp
 
                     case "2":
                         operacao = "subtração de dois números";
+                        operacaoSinal = "-";
                         break;
-                    default:
                     case "3":
                         operacao += "Multiplição\n";
+                        operacaoSinal = "*";
                         break;
-                    
+
+                    case "5":
+                        operacao += "Historico\n";
+                        break;
+
                 }
 
                 string subtitulo = $"Novo calculo de {operacao}";
 
                 Console.WriteLine(subtitulo + "\n");
 
-                Console.Write($"Digite o primeiro número: ");
-                double primeiroNumero = Convert.ToDouble(Console.ReadLine());
+                double primeiroNumero = 0;
+                double segundoNumero = 0;
+                if (opcao != "5")
+                {
+                    Console.Write($"Digite o primeiro número: ");
+                     primeiroNumero = Convert.ToDouble(Console.ReadLine());
 
-                Console.Write($"Digite o segundo número: ");
-                double segundoNumero = Convert.ToDouble(Console.ReadLine());
-
+                    Console.Write($"Digite o segundo número: ");
+                     segundoNumero = Convert.ToDouble(Console.ReadLine());
+                }
                 double resultado = 0;
 
                 switch (opcao)
@@ -82,15 +101,26 @@ namespace Calculadora.ConsoleApp
                 }
                 #endregion
 
+                operacaoAtual += $"{primeiroNumero} {operacaoSinal} {segundoNumero} = {resultado}";
+
+               
+
                 #region Mostrar Resultado
                 Console.Clear();
+
+            
 
                 Console.WriteLine("Calculadora Tabajara\n");
 
                 Console.WriteLine("Tela de Resultados\n");
 
-                Console.Write($"O resultado da operação de {operacao} é: {resultado}");
-
+                if (opcao == "5")
+                    VisualizarHistorico(histroico);
+                else
+                {
+                    Console.Write($"O resultado da operação de {operacao} é: {resultado}");
+                    histroico.Add(operacaoAtual);
+                }
                 Console.WriteLine();
 
                 Console.ReadLine();
@@ -98,6 +128,14 @@ namespace Calculadora.ConsoleApp
                 Console.Clear();
                 #endregion
 
+            }
+        }
+
+        private static void VisualizarHistorico(List<string> histroico)
+        {
+            foreach (var item in histroico)
+            {
+                Console.WriteLine(item);
             }
         }
     }
