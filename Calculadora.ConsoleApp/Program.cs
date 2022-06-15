@@ -47,9 +47,13 @@ namespace Calculadora.ConsoleApp
                     case "2":
                         operacao = "subtração de dois números";
                         break;
-                    default:
+                    
                     case "3":
                         operacao += "Multiplição\n";
+                        break;
+
+                    case "4":
+                        operacao = "divisão";
                         break;
                     
                 }
@@ -78,6 +82,9 @@ namespace Calculadora.ConsoleApp
                        
                     case "3":
                         resultado = primeiroNumero * segundoNumero;
+                        break;
+                    case "4":
+                        resultado = primeiroNumero / segundoNumero;
                         break;
                 }
                 #endregion
