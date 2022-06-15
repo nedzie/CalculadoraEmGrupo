@@ -2,7 +2,7 @@
 
 namespace Calculadora.ConsoleApp
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace Calculadora.ConsoleApp
 
                 Console.WriteLine("Digite S para sair\n");
 
-                Console.Write("Opção: ");
+                Console.Write("Opção: 3 = Multiplição ");
                 opcao = Console.ReadLine();
 
                 if (opcao.Equals("s", StringComparison.OrdinalIgnoreCase))
@@ -38,7 +38,8 @@ namespace Calculadora.ConsoleApp
 
                 switch (opcao)
                 {
-                    default:
+                    case "3":
+                        operacao += "Multiplição\n";
                         break;
                 }
 
@@ -56,7 +57,8 @@ namespace Calculadora.ConsoleApp
 
                 switch (opcao)
                 {
-                    default:
+                    case "3":
+                        resultado = primeiroNumero * segundoNumero;
                         break;
                 }
                 #endregion
@@ -79,4 +81,5 @@ namespace Calculadora.ConsoleApp
 
             }
         }
+    }
 }
