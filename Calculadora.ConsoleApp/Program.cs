@@ -69,6 +69,10 @@ namespace Calculadora.ConsoleApp
                     case "1":
                         resultado = primeiroNumero + segundoNumero;
                         break;
+
+                    case "2":
+                        resultado = primeiroNumero - segundoNumero;
+                        break;
                        
                     default:
                         break;
