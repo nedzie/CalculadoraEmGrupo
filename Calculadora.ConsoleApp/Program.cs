@@ -18,15 +18,27 @@ namespace Calculadora.ConsoleApp
 
                 Console.WriteLine("Tela Principal\n");
 
-                Console.WriteLine("Digite 2 para subtrair\n");
+                Console.WriteLine("Digite 1 para adição\n");
+
+                Console.WriteLine("Digite 2 para subtração\n");
+
+                Console.WriteLine("Digite 3 para multiplição\n");
+
+                Console.WriteLine("Digite 4 para divisão\n");
 
                 Console.WriteLine("Digite S para sair\n");
 
-                Console.Write("Opção: 3 = Multiplição ");
                 opcao = Console.ReadLine();
 
                 if (opcao.Equals("s", StringComparison.OrdinalIgnoreCase))
                     break;
+
+                if(opcao != "1" || opcao != "2" || opcao != "3" || opcao != "4")
+                {
+                    Console.WriteLine("Opção inválida, tente novamente!");
+                    Console.ReadKey();
+                    continue;
+                }
 
                 #endregion
 
