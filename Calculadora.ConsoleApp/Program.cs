@@ -18,6 +18,8 @@ namespace Calculadora.ConsoleApp
 
                 Console.WriteLine("Tela Principal\n");
 
+                Console.WriteLine("Digite 2 para subtrair\n");
+
                 Console.WriteLine("Digite S para sair\n");
 
                 Console.Write("Opção: 3 = Multiplição ");
@@ -38,9 +40,18 @@ namespace Calculadora.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "1":
+                        operacao = "adição";
+                        break;
+
+                    case "2":
+                        operacao = "subtração de dois números";
+                        break;
+                    default:
                     case "3":
                         operacao += "Multiplição\n";
                         break;
+                    
                 }
 
                 string subtitulo = $"Novo calculo de {operacao}";
@@ -57,6 +68,14 @@ namespace Calculadora.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "1":
+                        resultado = primeiroNumero + segundoNumero;
+                        break;
+
+                    case "2":
+                        resultado = primeiroNumero - segundoNumero;
+                        break;
+                       
                     case "3":
                         resultado = primeiroNumero * segundoNumero;
                         break;
