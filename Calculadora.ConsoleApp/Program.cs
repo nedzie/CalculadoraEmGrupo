@@ -43,7 +43,7 @@ namespace Calculadora.ConsoleApp
                 if (opcao.Equals("s", StringComparison.OrdinalIgnoreCase))
                     break;
 
-                if(opcao != "1" || opcao != "2" || opcao != "3" || opcao != "4")
+                if(opcao != "1" || opcao != "2" || opcao != "3" || opcao != "4" || opcao != "5")
                 {
                     Console.WriteLine("Opção inválida, tente novamente!");
                     Console.ReadKey();
