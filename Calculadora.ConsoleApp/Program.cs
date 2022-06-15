@@ -66,6 +66,10 @@ namespace Calculadora.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "1":
+                        resultado = primeiroNumero + segundoNumero;
+                        break;
+                       
                     default:
                         break;
                 }
