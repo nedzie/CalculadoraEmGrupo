@@ -38,7 +38,8 @@ namespace Calculadora.ConsoleApp
 
                 switch (opcao)
                 {
-                    default:
+                    case "1":
+                        operacao = "adição";
                         break;
                 }
 
@@ -56,7 +57,8 @@ namespace Calculadora.ConsoleApp
 
                 switch (opcao)
                 {
-                    default:
+                    case "1":
+                        resultado = primeiroNumero + segundoNumero;
                         break;
                 }
                 #endregion
@@ -79,4 +81,5 @@ namespace Calculadora.ConsoleApp
 
             }
         }
+    }
 }
